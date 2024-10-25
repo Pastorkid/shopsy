@@ -1,4 +1,4 @@
-import React from "react";
+
 import Slider from "react-slick";
 
 const TestimonialData = [
@@ -87,17 +87,17 @@ const Testimonials = () => {
         {/* Testimonial cards */}
         <div data-aos="zoom-in">
           <Slider {...settings}>
-            {TestimonialData.map((data) => (
-              <div className="my-6">
+            {TestimonialData.map((data,index) => (
+              <div key={index} className="my-6">
                 <div
                   key={data.id}
-                  className="flex flex-col gap-4 shadow-lg py-8 px-6 mx-4 rounded-xl dark:bg-gray-800 bg-primary/10 relative"
+                  className="relative flex flex-col gap-4 px-6 py-8 mx-4 shadow-lg rounded-xl dark:bg-gray-800 bg-primary/10"
                 >
                   <div className="mb-4">
                     <img
                       src={data.img}
                       alt=""
-                      className="rounded-full w-20 h-20"
+                      className="w-20 h-20 rounded-full"
                     />
                   </div>
                   <div className="flex flex-col items-center gap-4">
@@ -108,7 +108,7 @@ const Testimonials = () => {
                       </h1>
                     </div>
                   </div>
-                  <p className="text-black/20 text-9xl font-serif absolute top-0 right-0">
+                  <p className="absolute top-0 right-0 font-serif text-black/20 text-9xl">
                     ,,
                   </p>
                 </div>
